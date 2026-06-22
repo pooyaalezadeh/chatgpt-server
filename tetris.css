@@ -1,0 +1,38 @@
+body{
+    background:#08111f;
+    color:white;
+    font-family:tahoma;
+    text-align:center;
+    }
+    
+    .gameBox{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    margin-top:30px;
+    }
+    
+    #board{
+    background:black;
+    border:3px solid #38bdf8;
+    box-shadow:0 0 20px #38bdf8;
+    }
+    
+    .side{
+    background:#111827;
+    padding:20px;
+    border-radius:15px;
+    }
+    
+    button{
+    background:#38bdf8;
+    border:none;
+    padding:12px 20px;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:16px;
+    }
+    
+    button:hover{
+    background:#0ea5e9;
+    }

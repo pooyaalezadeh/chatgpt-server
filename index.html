@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HP Server AI Pro</title>
+<style>
+
+body{body{
+margin:0;
+font-family:tahoma;
+color:white;
+
+body{
+    margin:0;
+    font-family:tahoma;
+    color:white;
+
+    /* بک گراند */
+    background:
+    linear-gradient(
+        rgba(3,7,18,.88),
+        rgba(3,7,18,.92)
+    ),
+    url("images/datacenter.jpg");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+}
+
+
+/* کانتینر اصلی */
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:20px;
+}
+
+
+/* عنوان */
+.header{
+    text-align:center;
+    color:#38bdf8;
+    font-size:26px;
+    font-weight:bold;
+    margin-bottom:20px;
+    text-shadow:0 0 15px rgba(56,189,248,.5);
+}
+
+
+/* پنجره چت */
+#chat{
+    height:600px;
+    overflow-y:auto;
+
+    background:rgba(17,24,39,.85);
+
+    border:1px solid rgba(56,189,248,.15);
+
+    border-radius:20px;
+
+    backdrop-filter:blur(10px);
+
+    box-shadow:
+    0 0 30px rgba(56,189,248,.15);
+
+    padding:20px;
+}
+
+
+/* پیام کاربر */
+.user{
+    background:#2563eb;
+    padding:12px;
+    border-radius:15px;
+    margin:10px 0;
+}
+
+
+/* پیام ربات */
+.bot{
+    background:#1f2937;
+    border:1px solid #374151;
+    padding:12px;
+    border-radius:15px;
+    margin:10px 0;
+}
+
+
+/* کادر تایپ */
+input{
+    flex:1;
+    background:#0f172a;
+    color:white;
+
+    border:1px solid #334155;
+
+    padding:14px;
+
+    border-radius:15px;
+
+    outline:none;
+
+    font-size:15px;
+}
+
+
+/* دکمه ها */
+button{
+    background:#38bdf8;
+    color:white;
+
+    border:none;
+
+    border-radius:15px;
+
+    padding:14px 18px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+button:hover{
+    background:#0ea5e9;
+    transform:scale(1.05);
+
+    box-shadow:
+    0 0 20px rgba(56,189,248,.5);
+}
+/* تار کردن برای خوانایی متن */
+position: relative;
+}
+
+body::before{
+content:"";
+position: fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background: rgba(0,0,0,0.75);
+z-index:-1;
+}
+margin:0;
+font-family:tahoma;
+background:linear-gradient(135deg,#0b1220,#050814);
+color:white;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+padding:20px;
+}
+
+.header{
+text-align:center;
+font-size:22px;
+color:#38bdf8;
+font-weight:bold;
+margin-bottom:10px;
+}
+
+#chat{
+height:600px;
+overflow-y:auto;
+background:#111827;
+padding:15px;
+border-radius:12px;
+box-shadow:0 0 20px rgba(56,189,248,.15);
+}
+
+.msg{
+padding:12px;
+margin:10px 0;
+border-radius:10px;
+line-height:1.8;
+}
+
+.user{background:#2563eb;text-align:right;}
+.bot{background:#1f2937;border:1px solid #374151;}
+
+.inputBox{
+display:flex;
+gap:10px;
+margin-top:10px;
+}
+
+input{
+flex:1;
+padding:12px;
+border:none;
+border-radius:10px;
+outline:none;
+}
+
+button{
+padding:12px 15px;
+background:#38bdf8;
+border:none;
+border-radius:10px;
+cursor:pointer;
+font-weight:bold;
+}
+
+.typing{
+font-size:12px;
+opacity:0.7;
+height:18px;
+margin-top:5px;
+}.top-image{
+    text-align:center;
+    margin-bottom:15px;
+}
+
+.top-image img{
+    width:400px;
+    max-width:90%;
+    border-radius:10px;
+}.top-image{
+    text-align:center;
+    margin-top:20px;
+    margin-bottom:15px;
+}
+
+.top-image img{
+    width:400px;
+    max-width:90%;
+    border-radius:10px;
+}
+</style>
+</head>
+
+<body><div class="top-image">
+    <img src="server1.jpg" alt="HP Server">
+</div>
+<body>
+
+    <div class="top-image">
+        <img src="images/server1.jpg" alt="HP Server">
+    </div>
+    <div class="minecraft-gif">
+        <img src="images/minecraft.gif" alt="Minecraft">
+    </div>
+    <div id="themes">
+
+        <button onclick="setTheme('#050814','#0b1220')">🌙 مشکی</button>
+        
+        <button onclick="setTheme('#ffffff','#dbeafe')">🤍 سفید</button>
+        
+        <button onclick="setTheme('#064e3b','#022c22')">🟢 سبز</button>
+        
+        <button onclick="setTheme('#4c0519','#7f1d1d')">🔴 قرمز</button>
+        
+        <button onclick="setTheme('#1e1b4b','#312e81')">🟣 بنفش</button>
+        
+        <button onclick="setTheme('#0c4a6e','#082f49')">🔵 HP آبی</button>
+        
+        </div>
+    <div class="container">
+    <div class="container">
+<div class="container">
+
+<!-- 🖼️ اسلاید شو دیتاسنتر -->
+<div id="slider" style="margin-bottom:15px;border-radius:12px;overflow:hidden;">
+    <img id="slideImg" src="images/server1.jpg"
+    style="width:100%;height:220px;object-fit:cover;">
+</div>
+
+<div id="chat"></div>
+
+<div class="typing" id="typing"></div>
+<div style="text-align:center;margin:15px 0;">
+    <button onclick="window.open('tetris.html')">
+    🎮 بازی تتریس
+    </button>
+    </div>
+<div class="inputBox">
+<input id="msg" placeholder="سوال درباره سرور یا قطعه...">
+<button onclick="startVoice()">🎤</button>
+<button onclick="send()">ارسال</button>
+</div>
+
+</div>
+
+<script>
+
+// پیام اولیه
+window.onload = () => {
+
+add(`
+🖥️ <b>HP Server AI Pro</b><br>
+<span style="color:#38bdf8">
+فروش سرورهای HP Enterprise و قطعات اورجینال
+</span>
+
+<hr>
+
+🔥 <b>پرفروش‌ترین سرورها</b>
+
+🖥️ <b>HP ProLiant DL380 G9</b><br>
+✅ اقتصادی و مقرون‌به‌صرفه<br>
+✅ مناسب سایت، وردپرس، حسابداری و شرکت‌ها<br>
+✅ پشتیبانی از CPU Xeon E5-2600 V3/V4<br>
+<button onclick="order('G9')">🛒 سفارش G9</button>
+
+<br><br>
+
+⚡ <b>HP ProLiant DL380 G10</b><br>
+✅ مناسب مجازی‌سازی، هاستینگ و VPS<br>
+✅ پشتیبانی از Xeon Silver / Gold<br>
+✅ قابلیت ارتقا RAM ECC و SSD NVMe<br>
+<button onclick="order('G10')">🛒 سفارش G10</button>
+
+<br><br>
+
+🚀 <b>HP ProLiant DL380 G11</b><br>
+✅ قدرت پردازشی بالا<br>
+✅ مناسب دیتاسنتر، سازمان‌ها و پردازش‌های سنگین<br>
+✅ پشتیبانی از DDR5 و CPUهای نسل جدید Intel Xeon<br>
+<button onclick="order('G11')">🛒 سفارش G11</button>
+
+<br><br>
+
+🧠 <b>HP ProLiant DL380 G12</b><br>
+✅ مناسب AI، مجازی‌سازی و پردازش‌های حرفه‌ای<br>
+✅ قابلیت ارتقای بسیار بالا<br>
+✅ مناسب پروژه‌های سنگین و استفاده 24 ساعته<br>
+<button onclick="order('G12')">🛒 سفارش G12</button>
+
+<hr>
+
+🔧 <b>قطعات سرور HP موجود:</b><br>
+
+🧠 RAM ECC DDR4 / DDR5<br>
+⚙️ CPU Xeon E5 / Silver / Gold / Platinum<br>
+💾 SSD SATA / SSD NVMe / HDD Enterprise<br>
+🔋 پاور اصلی HP Hot-Plug<br>
+❄️ فن سرور و هیت‌سینک اورجینال HP<br>
+📦 رایزر کارت و ریدکنترلر P440 / P408i<br>
+🔌 کدی هارد، کابل و لوازم جانبی سرور
+
+<hr>
+
+⭐ <b>مزایای خرید از ما</b><br>
+
+✅ مشاوره رایگان قبل از خرید<br>
+✅ امکان انتخاب کانفیگ دلخواه CPU و RAM<br>
+✅ قطعات اورجینال و تست شده<br>
+✅ مناسب شرکت‌ها، دیتاسنترها و هاستینگ<br>
+✅ پشتیبانی برای انتخاب بهترین سرور متناسب با بودجه
+
+<hr>
+
+📞 برای استعلام قیمت و موجودی پیام دهید.<br>
+💬 کافیست نام سرور یا قطعه موردنظر خود را بنویسید تا راهنمایی شوید.
+🔧 قطعات:
+RAM | CPU Xeon | SSD | HDD | Power | Heatsink
+
+💡 فروش فقط حضوری
+📞 قیمت تماس
+`,"bot");
+
+scroll();
+};
+
+// پیام
+function add(text,type){
+document.getElementById("chat").innerHTML +=
+`<div class="msg ${type}">${text}</div>`;
+}
+
+function scroll(){
+document.getElementById("chat").scrollTop =
+document.getElementById("chat").scrollHeight;
+}
+
+// 🔊 صدای فارسی واقعی (اصلاح شده)
+function speak(text){
+
+speechSynthesis.cancel();
+
+let msg = new SpeechSynthesisUtterance(text);
+
+let voices = speechSynthesis.getVoices();
+
+// پیدا کردن صدای فارسی
+let faVoice = voices.find(v =>
+v.lang.includes("fa") ||
+v.name.toLowerCase().includes("persian") ||
+v.name.toLowerCase().includes("farsi")
+);
+
+if(faVoice){
+msg.voice = faVoice;
+msg.lang = faVoice.lang;
+} else {
+msg.lang = "fa-IR";
+}
+
+msg.rate = 0.95;
+msg.pitch = 1;
+
+speechSynthesis.speak(msg);
+}
+
+// ارسال پیام
+async function send(){
+
+let msg = document.getElementById("msg");
+if(!msg.value) return;
+
+add("👤 "+msg.value,"user");
+
+let text = msg.value;
+msg.value="";
+
+document.getElementById("typing").innerText="🤖 در حال پردازش...";
+
+let res = await fetch("/chat",{
+method:"POST",
+headers:{"Content-Type":"application/json"},
+body:JSON.stringify({message:text})
+});
+
+let data = await res.json();
+
+document.getElementById("typing").innerText="";
+
+add("🤖 "+data.reply,"bot");
+
+// 🔊 صدا
+speak(data.reply);
+
+scroll();
+}
+
+// 🎤 میکروفون
+function startVoice(){
+
+let recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+
+recognition.lang = "fa-IR";
+recognition.start();
+
+recognition.onresult = function(event){
+document.getElementById("msg").value =
+event.results[0][0].transcript;
+};
+
+}
+
+</script>
+<script>
+
+// 🖼️ اسلاید شو دیتاسنتر (نسخه بدون خطا)
+
+let images = [
+"https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg",
+"https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg",
+"https://images.pexels.com/photos/2582937/pexels-photo-2582937.jpeg",
+"https://images.pexels.com/photos/1181354/pexels-photo-1181354.jpeg"
+];
+
+let i = 0;
+
+// صبر کن صفحه کامل لود بشه
+window.addEventListener("load", () => {
+
+let images = [
+"images/server1.jpg",
+"images/server2.jpg",
+"images/server3.jpg",
+"images/server4.jpg"
+];
+
+let i = 0;
+let img = document.getElementById("slideImg");
+img.src = "images/server1.jpg";
+if(!img){
+    console.log("slideImg not found");
+    return;
+}
+
+img.src = images[0];
+
+setInterval(() => {
+    i = (i + 1) % images.length;
+    img.src = images[i];
+}, 3000);
+
+});  </script>
+<script>
+
+    async function order(product){
+    
+    let name = prompt("👤 نام شما را وارد کنید");
+    if(!name) return;
+    
+    let phone = prompt("📞 شماره تماس را وارد کنید");
+    if(!phone) return;
+    
+    let cpu = prompt("⚙️ CPU مورد نظر (اختیاری)") || "";
+    let ram = prompt("🧠 RAM مورد نظر (اختیاری)") || "";
+    
+    try{
+    
+    let res = await fetch("/order",{
+    method:"POST",
+    headers:{
+    "Content-Type":"application/json"
+    },
+    body:JSON.stringify({
+    product,
+    name,
+    phone,
+    cpu,
+    ram
+    })
+    });
+    
+    let data = await res.json();
+    
+    alert(data.msg);
+    
+    }catch(err){
+    
+    alert("❌ ارتباط با سرور برقرار نشد");
+    
+    }
+    
+    }
+    
+    </script>
+    <div style="position:fixed;top:10px;left:10px;z-index:9999">
+        <select onchange="changeTheme(this.value)">
+        <option value="#050814">🔵 آبی تیره</option>
+        <option value="#111827">⚫ مشکی</option>
+        <option value="#064e3b">🟢 سبز</option>
+        <option value="#4c0519">🔴 قرمز</option>
+        <option value="#581c87">🟣 بنفش</option>
+        </select>
+        </div>
+        
+        <script>
+        function changeTheme(color){
+        document.body.style.background =
+        `linear-gradient(135deg,${color},#050814)`;
+        
+        localStorage.setItem("themeColor",color);
+        }
+        
+        let saved = localStorage.getItem("themeColor");
+        
+        if(saved){
+        document.body.style.background =
+        `linear-gradient(135deg,${saved},#050814)`;
+        }
+        </script>
+        <script>
+
+            function setTheme(color){
+            
+            document.body.style.background = color;
+            document.body.style.backgroundImage = "none";
+            
+            }
+            
+            </script>
+</body> 
+</html>

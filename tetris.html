@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HP Tetris Pro</title>
+
+<style>
+body{
+margin:0;
+background:radial-gradient(circle,#0b1220,#050814);
+color:white;
+font-family:tahoma;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+height:100vh;
+}
+
+h1{
+color:#38bdf8;
+text-shadow:0 0 10px #38bdf8;
+margin-bottom:10px;
+}
+
+.container{
+display:flex;
+gap:20px;
+align-items:flex-start;
+}
+
+canvas{
+background:#0f172a;
+border:2px solid #38bdf8;
+box-shadow:0 0 20px rgba(56,189,248,0.4);
+}
+
+.panel{
+display:flex;
+flex-direction:column;
+gap:10px;
+}
+
+button{
+padding:10px 15px;
+border:none;
+background:#38bdf8;
+border-radius:10px;
+cursor:pointer;
+font-weight:bold;
+}
+
+.box{
+background:#111827;
+padding:10px;
+border-radius:10px;
+width:120px;
+text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<h1>🎮 HP TETRIS PRO</h1>
+
+<div class="container">
+
+<canvas id="board"></canvas>
+
+<div class="panel">
+<button onclick="startGame()">▶ شروع</button>
+<div id="highscore">HighScore: 0</div>
+
+<div class="box">Score: <div id="score">0</div></div>
+<div class="box">Level: <div id="level">1</div></div>
+
+<div class="box">
+Next:
+<canvas id="next" width="80" height="80"></canvas>
+</div>
+
+</div>
+
+</div>
+
+<script src="tetris.js"></script>
+
+</body>
+</html>
+<div style="margin-top:10px;display:flex;gap:5px;flex-wrap:wrap;justify-content:center">
+
+    <button onmousedown="move('left')">⬅</button>
+    <button onmousedown="move('down')">⬇</button>
+    <button onmousedown="move('right')">➡</button>
+    <button onclick="rotate()">🔄</button>
+    
+    </div>
