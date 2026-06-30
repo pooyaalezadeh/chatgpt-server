@@ -216,6 +216,8 @@ app.get("/admin", (req, res) => {
 /* =========================
    🚀 Server Start
 ========================= */
-app.listen(3002, () => {
-    console.log("Running on 3002");
+const PORT = process.env.PORT || 3002;
+
+app.listen(PORT, "0.0.0.0", () => {
+    console.log(`Running on ${PORT}`);
 });
